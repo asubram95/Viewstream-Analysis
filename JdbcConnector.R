@@ -12,11 +12,11 @@ if (!require("RJDBC")) {
 }
 
 jdbcDriver <- JDBC(driverClass="com.snowflake.client.jdbc.SnowflakeDriver",
-                   classPath="/Users/akshaysubramaniam/downloads/snowflake-jdbc-3.0.2.jar")
+                   classPath="path")
 db <- dbConnect(jdbcDriver,
                             "jdbc:snowflake://kargo.snowflakecomputing.com:443/?account=kargo",
-                            "akshay",
-                            "ILpockET01",
+                            "username",
+                            "password",
                             opts=list(warehouse ="RTEST",
                                       db="KARGOTEST",
                                       schema="SYSADMIN"))
