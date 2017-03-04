@@ -12,13 +12,13 @@ if (!require("RJDBC")) {
 }
 
 jdbcDriver <- JDBC(driverClass="com.snowflake.client.jdbc.SnowflakeDriver",
-                   classPath="path")
+                   classPath="admin")
 db <- dbConnect(jdbcDriver,
-                            "jdbc:snowflake://kargo.snowflakecomputing.com:443/?account=kargo",
+                            "jdbc:snowflake://kargo.snowflakecomputing.com:443/?account=acme",
                             "username",
                             "password",
-                            opts=list(warehouse ="RTEST",
-                                      db="KARGOTEST",
+                            opts=list(warehouse ="TEST",
+                                      db="TEST",
                                       schema="SYSADMIN"))
 result <- dbGetQuery(db, "select current_timestamp() as now, current_user() as user")
 #print(result)
